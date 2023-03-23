@@ -151,10 +151,10 @@ export function ab2str(buf: ArrayBuffer, encoding: string = 'hex') {
 
 export function validateString(str: any, name?: string): str is string {
   const isString = typeof str === 'string';
-  if (isString) {
+  if (!isString) {
     throw new Error(`${name} is not a string`);
   }
-  return isString;
+  return str;
 }
 
 export function validateFunction(f: any): f is Function {
